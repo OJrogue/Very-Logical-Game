@@ -1,13 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Dongle&display=swap');
+
 body {
+  width: 100vw;
+  size: 100vh;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  background-color: grey;
+  font-family: 'Dongle', sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.container {
+  display: grid;
+  grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+  width: 100vw;
+  height: 100vh;
 }
+
+.popup {
+  position: absolute;  
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  width: 50%;
+  height: 50%;
+  border: 3px solid black;
+  text-align: center;
+  font-size: 5vw;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 50% 30%; 
+  row-gap: 5%;
+  justify-items: center;
+  animation: text-colors 5s linear infinite;
+}
+
+.btn {
+  background: black;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 100%;
+  font-family: inherit;
+  width: 50%;
+  animation: background-colors 10s linear infinite;
+}
+
+@keyframes background-colors {
+  0% {background-color: #802BB1;}
+  20% {background-color: #3AAFA9;}
+  40% {background-color: #F76C6C;}
+  60% {background-color: #25274D;}
+  80% {background-color: #3FEEE6;}
+  100% {background-color: #802BB1;}
+}
+
+@keyframes text-colors {
+  0% {color: #3AAFA9;}
+  20% {color: #802BB1;}
+  40% {color: #25274D;}
+  60% {color: #F76C6C;}
+  80% {color: #3FEEE6;}
+  100% {color: #3AAFA9;}
+  0% {border-color: #802BB1;}
+  20% {border-color: #3AAFA9;}
+  40% {border-color: #F76C6C;}
+  60% {border-color: #25274D;}
+  80% {border-color: #3FEEE6;}
+  100% {border-color: #802BB1;}
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.congratulations {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media only screen and (max-width: 965px){
+  .popup{
+    font-size: 8vw;
+    width: 80%;
+  }
+}
+
+@media only screen and (max-height: 500px){
+  .popup{
+    font-size: 10vh;
+  }
+}
+
